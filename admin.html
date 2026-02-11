@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>OmHackz — Admin</title>
+
+<link rel="stylesheet" href="./css/styles.css">
+<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="site-header">
+    <h1>OmHackz Portfolio</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <a href="./">Home</a> |
+    <a href="./blog">Blog</a> |
+    <a href="./downloads">Downloads</a> |
+    <a href="./links">Links</a> |
+    <a href="./admin" class="active">Admin</a>
+  </nav>
+
+  <!-- Admin Section -->
+  <section class="section">
+    <h2><i class="fa-solid fa-lock-keyhole"></i> Admin Panel</h2>
+    <p>Configure JSONBin and manage posts/downloads. Keys are saved in your browser only.</p>
+  </section>
+
+  <!-- JSONBin Settings -->
+  <section class="section">
+    <h3><i class="fa-solid fa-gear"></i> JSONBin Settings</h3>
+
+    <p>API Key</p>
+    <input id="apiKey" type="password" placeholder="Enter your JSONBin secret key" style="width:100%; margin-bottom:10px;">
+
+    <p>Posts Bin ID</p>
+    <input id="postsBinId" type="text" placeholder="Bin ID for posts" style="width:100%; margin-bottom:10px;">
+
+    <p>Downloads Bin ID</p>
+    <input id="downloadsBinId" type="text" placeholder="Bin ID for downloads" style="width:100%; margin-bottom:10px;">
+
+    <p>
+      <button class="btn" id="saveSettings"><i class="fa-solid fa-floppy-disk"></i> Save</button>
+      <button class="btn" id="clearSettings"><i class="fa-solid fa-trash"></i> Clear</button>
+    </p>
+
+    <p id="settingsStatus"></p>
+  </section>
+
+  <!-- New Post -->
+  <section class="section">
+    <h3><i class="fa-solid fa-pen-to-square"></i> New Post</h3>
+
+    <p>Title</p>
+    <input id="postTitle" type="text" placeholder="Post title" style="width:100%; margin-bottom:10px;">
+
+    <p>Content</p>
+    <textarea id="postContent" rows="6" placeholder="Write your post..." style="width:100%; margin-bottom:10px;"></textarea>
+
+    <p>
+      <button class="btn" id="addPost"><i class="fa-solid fa-plus"></i> Add Post</button>
+    </p>
+
+    <div id="postList"></div>
+  </section>
+
+  <!-- New Download -->
+  <section class="section">
+    <h3><i class="fa-solid fa-box-archive"></i> New Download</h3>
+
+    <p>Name</p>
+    <input id="dlName" type="text" placeholder="File name" style="width:100%; margin-bottom:10px;">
+
+    <p>Description</p>
+    <input id="dlDesc" type="text" placeholder="Short description" style="width:100%; margin-bottom:10px;">
+
+    <p>URL</p>
+    <input id="dlUrl" type="url" placeholder="https://..." style="width:100%; margin-bottom:10px;">
+
+    <p>
+      <button class="btn" id="addDownload"><i class="fa-solid fa-plus"></i> Add Download</button>
+    </p>
+
+    <div id="downloadList"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    © 2026 OmHackz
+  </footer>
+
+</div>
+
+<script src="./js/main.js"></script>
+<script src="./js/storage.js"></script>
+<script src="./js/admin.js"></script>
+
+</body>
+</html>
